@@ -49,21 +49,6 @@
   var heroCount = document.getElementById('heroCount');
   if (heroCount) animateNumber(heroCount, 8862715, 2200);
 
-  var reserveCount = document.getElementById('reserveCount');
-  if (reserveCount && 'IntersectionObserver' in window) {
-    var io2 = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateNumber(reserveCount, 921608, 1800);
-          io2.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    io2.observe(reserveCount);
-  } else if (reserveCount) {
-    reserveCount.textContent = '921,608';
-  }
-
   /* ---------- 4. 公告轮播 ---------- */
   var notices = document.querySelectorAll('#noticeList .notice-item');
   if (notices.length > 1) {

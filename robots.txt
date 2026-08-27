@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mengcheng-ying.github.io/moxiangqing-site/sitemap.xml
