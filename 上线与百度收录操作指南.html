@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《墨香情》官网上线与百度收录操作指南</title>
+<style>
+:root{--ink:#2b2620;--muted:#6f6758;--accent:#a83a32;--accent2:#96763a;--bg:#f7f3ea;--surface:#ffffff;--rule:#dcd2ba;--serif:'Kaiti SC','STKaiti','KaiTi','SimSun',serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--serif),sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;padding:0 0 60px;}
+.hd{background:linear-gradient(120deg,#2b2620,#4a3b2c);color:#f5ecd9;padding:44px 28px 36px;text-align:center;}
+.hd h1{font-size:26px;letter-spacing:.12em;font-weight:500;}
+.hd p{margin-top:10px;font-size:14px;color:#cbbfa5;letter-spacing:.1em;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+.sec{margin-top:44px;}
+.step{display:flex;gap:18px;margin-top:18px;background:var(--surface);border:1px solid var(--rule);padding:20px 22px;border-radius:8px;}
+.num{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;}
+.step h3{font-size:18px;font-weight:500;letter-spacing:.05em;margin-bottom:6px;}
+.step p,.step li,.step .tip{font-size:14.5px;color:var(--muted);}
+.step ul{padding-left:20px;}
+.step li{margin:4px 0;}
+h2.sec-tit{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:500;letter-spacing:.1em;}
+h2.sec-tit::before{content:'';width:6px;height:24px;background:var(--accent);}
+.cmd{background:#1f1b15;color:#e8dcc5;font-family:Consolas,Menlo,monospace;font-size:13px;padding:10px 14px;border-radius:6px;margin:8px 0;overflow-x:auto;display:block;}
+.dark{border:1px solid var(--rule);border-left:4px solid var(--accent2);padding:10px 14px;border-radius:6px;background:#fbf8f0;margin-top:10px;}
+.dark b{color:var(--accent);}
+.ok{color:#2e7d32;font-weight:500;}
+.warn{color:#b26a00;font-weight:500;}
+.cta-btn{display:inline-block;margin-top:22px;background:var(--accent);color:#fff;padding:12px 30px;letter-spacing:.2em;border-radius:6px;text-decoration:none;}
+.note{background:var(--surface);border:1px dashed var(--accent2);padding:18px 22px;border-radius:8px;margin-top:20px;font-size:14.5px;color:var(--muted);}
+.foot{text-align:center;margin-top:50px;color:var(--muted);font-size:13px;letter-spacing:.1em;}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:4px;margin-left:8px;vertical-align:middle;}
+.tag-blue{background:#e3edfd;color:#1a56b8;border:1px solid #b6d0f5;}
+.tag-green{background:#e7f6e9;color:#1e7a2a;border:1px solid #bfe6c5;}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>《墨香情》官网 · Cloudflare Pages 上线与百度收录指南</h1>
+  <p>真实架构：GitHub 存代码 → Cloudflare Pages 托管（项目 mxq）→ 自定义域 mxq.mengchen.me</p>
+</div>
+<div class="wrap">
+
+  <div class="sec">
+    <h2 class="sec-tit">当前进度确认</h2>
+    <div class="note">
+      你的 Cloudflare Pages 项目 <b>mxq</b> 已创建，正在验证自定义域 <b style="color:var(--accent)">mxq.mengchen.me</b>（验证最长 48 小时）。
+      本站所需文件（<b class="ok">index.html 根入口</b> + assets + <b class="ok">robots.txt</b> + <b class="ok">sitemap.xml</b>）已全部就绪，Sitemap 地址已指向真实域名 <span style="font-family:monospace;color:var(--accent2)">https://mxq.mengchen.me/</span>。
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">第一步 · 确认 Cloudflare 连接的 GitHub 仓库 <span class="tag tag-blue">关键</span></h2>
+    <div class="step">
+      <div class="num">1</div>
+      <div>
+        <h3>检查项目 mxq 连接的是哪个仓库</h3>
+        <p>截图显示连接的是 <b>mengcheng-ying/moxiangshui</b>，但本站代码当前提交在仓库 <b>mengcheng-ying/moxiangqing-site</b>。二者必须<b>一致</b>，否则部署的是旧内容。</p>
+        <p>Cloudflare Pages → 项目 <b>mxq</b> → 设置 → 关联的 Git 仓库：</p>
+        <p class="ok">若连的是 moxiangshui：把本站代码提交推送到 moxiangshui 仓库（见第二步）。</p>
+        <p class="warn">若连错仓库：点「连接到仓库」改选 moxiangqing-site，或在 Cloudflare 上换到正确的仓库。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">第二步 · 推送代码到 Cloudflare 连接的仓库</h2>
+    <div class="step">
+      <div class="num">2</div>
+      <div>
+        <h3>提交并推送本站全部文件</h3>
+        <p>确保仓库里的核心文件是：<span style="font-family:monospace">index.html</span>（根入口）、<span style="font-family:monospace">assets/</span>、<span style="font-family:monospace">_shared/</span>、<span style="font-family:monospace">robots.txt</span>、<span style="font-family:monospace">sitemap.xml</span>。</p>
+        <span class="cmd">git add -A</span>
+        <span class="cmd">git commit -m "墨香情官网：整合资讯+SEO 文件，适配 Cloudflare Pages"</span>
+        <span class="cmd">git push origin main</span>
+        <p>Cloudflare Pages 会在 push 后自动重新部署（无需手动触发）。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">第三步 · 等自定义域验证完成</h2>
+    <div class="step">
+      <div class="num">3</div>
+      <div>
+        <h3>等待 mxq.mengchen.me 验证与 DNS 生效</h3>
+        <ul>
+          <li>Cloudflare 显示「正在验证」属正常，最长 <b>48 小时</b>生效，通常几分钟到几小时。</li>
+          <li>验证通过后，输入 <span style="color:var(--accent2)">https://mxq.mengchen.me/</span> 能打开官网即部署成功。</li>
+          <li>若一直停在"完成 DNS 设置"，按 Cloudflare 提示点开，补一条 CNAME 或 A 记录（若域名在外部解析需去对应服务商配）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">第四步 · 提交给百度收录</h2>
+    <div class="step">
+      <div class="num">4</div>
+      <div>
+        <h3>百度搜索资源平台提交</h3>
+        <ul>
+          <li>打开 <b>ziyuan.baidu.com</b>，百度账号登录 → 「站点管理」→ 添加站点</li>
+          <li>站点地址填 <span style="color:var(--accent2)">https://mxq.mengchen.me/</span></li>
+          <li>验证方式选 <b>HTML 标签验证</b>：复制验证 Meta 到 index.html 的 &lt;head&gt; 里，重新 push（Cloudflare 自动重部署）</li>
+          <li>验证通过 → 「链接提交」普通收录：</li>
+          <li>① sitemap 提交：<span style="font-family:monospace">https://mxq.mengchen.me/sitemap.xml</span></li>
+          <li>② 手动提交：提交 <span style="font-family:monospace">https://mxq.mengchen.me/</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">第五步 · 检测收录</h2>
+    <div class="step">
+      <div class="num">5</div>
+      <div>
+        <h3>查询是否被百度收录</h3>
+        <span class="cmd">site:mxq.mengchen.me</span>
+        <p class="ok">首次提交后百度通常 3-25 天内收录。此后更新内容时同时刷新 sitemap 并重新推送即可。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-tit">必须注意的红线</h2>
+    <div class="note">
+      <ul>
+        <li><b>仓库一致：</b>Cloudflare 连接仓库 与 代码所在仓库必须相同，否则线上不是最新版。</li>
+        <li><b>根入口 index.html 必须有：</b>Cloudflare Pages 访问根域名默认找 index.html（目前已建好）。</li>
+        <li><b>强制 HTTPS：</b>Cloudflare 「Enforce HTTPS」建议开启，百度信任 https。</li>
+        <li><b>别堆重复页：</b>单页官网即可，别做大量重复内容页面。</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="foot">《墨香情》手游官方网站 · Cloudflare Pages 上线操作指南</p>
+</div>
+</body>
+</html>
