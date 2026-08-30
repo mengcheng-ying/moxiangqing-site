@@ -116,15 +116,19 @@ body::after {
 }
 .hero-bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+  object-fit: cover; object-position: center 34%;
 }
 .hero-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(to top,
-    rgba(247,243,234,.95) 0%,
-    rgba(247,243,234,.78) 18%,
-    rgba(247,243,234,.35) 42%,
-    rgba(247,243,234,0) 62%);
+  background:
+    linear-gradient(to top,
+      rgba(247,243,234,.96) 0%,
+      rgba(247,243,234,.78) 22%,
+      rgba(247,243,234,.36) 46%,
+      rgba(247,243,234,0) 66%),
+    linear-gradient(to right,
+      rgba(247,243,234,.40) 0%,
+      rgba(247,243,234,0) 46%);
 }
 .hero-inner {
   position: relative; z-index: 2;
@@ -465,7 +469,7 @@ body::after {
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="#top" aria-label="墨香情首页">
-      <img class="brand-logo" src="assets/logo_moxiangqing_cut.png" alt="墨香情" >
+      <img class="brand-logo" src="assets/logo_moxiangqing_cut.webp" alt="墨香情" width="46" height="46">
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#features">游戏特色</a>
@@ -478,7 +482,7 @@ body::after {
 
 <!-- Hero -->
 <header class="hero" id="top">
-  <img class="hero-bg" src="assets/hero_keyvisual_1896x1064.jpg" alt="墨香情 游戏主视觉：侠侣执剑立于花树山水之间">
+  <img class="hero-bg" src="assets/hero_keyvisual_1896x1064.jpg" alt="墨香情 游戏主视觉：粉发女侠执剑鏖战古城沙场" fetchpriority="high">
   <div class="hero-veil"></div>
   <div class="hero-inner">
     <div class="hero-copy">
