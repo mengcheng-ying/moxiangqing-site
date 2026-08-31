@@ -39,15 +39,15 @@ h2.sec-tit::before{content:'';width:6px;height:24px;background:var(--accent);}
 <body>
 <div class="hd">
   <h1>《墨香情》官网 · Cloudflare Pages 上线与百度收录指南</h1>
-  <p>真实架构：GitHub 存代码 → Cloudflare Pages 托管（项目 mxq）→ 自定义域 mxq.mengchen.me</p>
+  <p>真实架构：GitHub 存代码 → Cloudflare Pages 托管（项目 mxq）→ 自定义域 mxq.fmbly.com</p>
 </div>
 <div class="wrap">
 
   <div class="sec">
     <h2 class="sec-tit">当前进度确认</h2>
     <div class="note">
-      你的 Cloudflare Pages 项目 <b>mxq</b> 已创建，正在验证自定义域 <b style="color:var(--accent)">mxq.mengchen.me</b>（验证最长 48 小时）。
-      本站所需文件（<b class="ok">index.html 根入口</b> + assets + <b class="ok">robots.txt</b> + <b class="ok">sitemap.xml</b>）已全部就绪，Sitemap 地址已指向真实域名 <span style="font-family:monospace;color:var(--accent2)">https://mxq.mengchen.me/</span>。
+      你的 Cloudflare Pages 项目 <b>mxq</b> 已创建，正在验证自定义域 <b style="color:var(--accent)">mxq.fmbly.com</b>（验证最长 48 小时）。
+      本站所需文件（<b class="ok">index.html 根入口</b> + assets + <b class="ok">robots.txt</b> + <b class="ok">sitemap.xml</b>）已全部就绪，Sitemap 地址已指向真实域名 <span style="font-family:monospace;color:var(--accent2)">https://mxq.fmbly.com/</span>。
     </div>
   </div>
 
@@ -85,10 +85,10 @@ h2.sec-tit::before{content:'';width:6px;height:24px;background:var(--accent);}
     <div class="step">
       <div class="num">3</div>
       <div>
-        <h3>等待 mxq.mengchen.me 验证与 DNS 生效</h3>
+        <h3>等待 mxq.fmbly.com 验证与 DNS 生效</h3>
         <ul>
           <li>Cloudflare 显示「正在验证」属正常，最长 <b>48 小时</b>生效，通常几分钟到几小时。</li>
-          <li>验证通过后，输入 <span style="color:var(--accent2)">https://mxq.mengchen.me/</span> 能打开官网即部署成功。</li>
+          <li>验证通过后，输入 <span style="color:var(--accent2)">https://mxq.fmbly.com/</span> 能打开官网即部署成功。</li>
           <li>若一直停在"完成 DNS 设置"，按 Cloudflare 提示点开，补一条 CNAME 或 A 记录（若域名在外部解析需去对应服务商配）。</li>
         </ul>
       </div>
@@ -103,11 +103,11 @@ h2.sec-tit::before{content:'';width:6px;height:24px;background:var(--accent);}
         <h3>百度搜索资源平台提交</h3>
         <ul>
           <li>打开 <b>ziyuan.baidu.com</b>，百度账号登录 → 「站点管理」→ 添加站点</li>
-          <li>站点地址填 <span style="color:var(--accent2)">https://mxq.mengchen.me/</span></li>
+          <li>站点地址填 <span style="color:var(--accent2)">https://mxq.fmbly.com/</span></li>
           <li>验证方式选 <b>HTML 标签验证</b>：复制验证 Meta 到 index.html 的 &lt;head&gt; 里，重新 push（Cloudflare 自动重部署）</li>
           <li>验证通过 → 「链接提交」普通收录：</li>
-          <li>① sitemap 提交：<span style="font-family:monospace">https://mxq.mengchen.me/sitemap.xml</span></li>
-          <li>② 手动提交：提交 <span style="font-family:monospace">https://mxq.mengchen.me/</span></li>
+          <li>① sitemap 提交：<span style="font-family:monospace">https://mxq.fmbly.com/sitemap.xml</span></li>
+          <li>② 手动提交：提交 <span style="font-family:monospace">https://mxq.fmbly.com/</span></li>
         </ul>
       </div>
     </div>
@@ -119,7 +119,7 @@ h2.sec-tit::before{content:'';width:6px;height:24px;background:var(--accent);}
       <div class="num">5</div>
       <div>
         <h3>查询是否被百度收录</h3>
-        <span class="cmd">site:mxq.mengchen.me</span>
+        <span class="cmd">site:mxq.fmbly.com</span>
         <p class="ok">首次提交后百度通常 3-25 天内收录。此后更新内容时同时刷新 sitemap 并重新推送即可。</p>
       </div>
     </div>

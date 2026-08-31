@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mxq.mengchen.me/sitemap.xml
+Sitemap: https://mxq.fmbly.com/sitemap.xml
