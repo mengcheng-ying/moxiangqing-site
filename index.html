@@ -428,7 +428,11 @@ body::after {
   .nav-cta { padding: 8px 18px; font-size: 14px; }
   .hero-inner { padding: 26px 20px 64px; }
   .hero-bg { object-position: 72% center; }
-  .btn-download { flex: 1 1 100%; justify-content: center; }
+  .btn-download { flex: none; justify-content: center; gap: 9px; padding: 9px 16px 9px 13px; }
+  .btn-download .dl-icon { width: 22px; height: 22px; }
+  .btn-download .dl-icon svg { width: 18px; height: 18px; }
+  .btn-download .dl-text b { font-size: 14px; }
+  .btn-download .dl-text small { font-size: 10px; }
   .hero-scroll { display: none; }
   .font-size-helper { display: none; }
   .hero-tag { font-size: 13px; padding: 6px 14px 6px 18px; letter-spacing: .3em; }
@@ -448,8 +452,12 @@ body::after {
   .info-grid { grid-template-columns: 1fr; gap: 18px; }
   .info-card li { font-size: 14.5px; }
   .reserve-panel { padding: 28px 20px 24px; }
-  .dl-big { padding: 14px 16px; }
-  .dl-big-text b { font-size: 15.5px; }
+  .dl-big { padding: 11px 13px; gap: 12px; }
+  .dl-big-icon { width: 34px; height: 34px; }
+  .dl-big-icon svg { width: 18px; height: 18px; }
+  .dl-big-text b { font-size: 14px; }
+  .dl-big-text small { font-size: 11px; }
+  .dl-arrow { width: 15px; height: 15px; }
   .dl-panel-title { font-size: 13px; }
   .footer { padding: 48px 0 28px; }
   .footer-links { gap: 16px; font-size: 13px; row-gap: 8px; }
@@ -462,7 +470,7 @@ body::after {
   .hero-inner { padding: 20px 16px 56px; }
   .hero-title { font-size: clamp(46px, 15vw, 68px); }
   .hero-slogan { letter-spacing: .24em; }
-  .btn-download { gap: 10px; padding: 11px 18px 11px 14px; }
+  .btn-download { gap: 8px; padding: 8px 14px 8px 11px; }
   .feature-card p { font-size: 14.5px; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
