@@ -1,6 +1,10 @@
 name: 百度链接逐条推送
 
 on:
+  schedule:
+    - cron: '36 19 * * *'   # 每天北京时间 03:36（UTC 19:36）定时逐条推送
+  push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
